@@ -1,0 +1,102 @@
+# working-of-casio-calculator
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int choice;
+    double a, b, result;
+
+    while (1) {
+        printf("\n--- Casio fx-991MS Simulator ---\n");
+        printf("1. Addition\n");
+        printf("2. Subtraction\n");
+        printf("3. Multiplication\n");
+        printf("4. Division\n");
+        printf("5. Power\n");
+        printf("6. Square Root\n");
+        printf("7. Sine\n");
+        printf("8. Cosine\n");
+        printf("9. Log (base 10)\n");
+        printf("10. Exit\n");
+
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &a, &b);
+                result = a + b;
+                printf("Result = %.2lf\n", result);
+                break;
+
+            case 2:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &a, &b);
+                result = a - b;
+                printf("Result = %.2lf\n", result);
+                break;
+
+            case 3:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &a, &b);
+                result = a * b;
+                printf("Result = %.2lf\n", result);
+                break;
+
+            case 4:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &a, &b);
+                if (b != 0)
+                    result = a / b;
+                else {
+                    printf("Error: Division by zero\n");
+                    continue;
+                }
+                printf("Result = %.2lf\n", result);
+                break;
+
+            case 5:
+                printf("Enter base and exponent: ");
+                scanf("%lf %lf", &a, &b);
+                result = pow(a, b);
+                printf("Result = %.2lf\n", result);
+                break;
+
+            case 6:
+                printf("Enter number: ");
+                scanf("%lf", &a);
+                result = sqrt(a);
+                printf("Result = %.2lf\n", result);
+                break;
+
+            case 7:
+                printf("Enter angle in degrees: ");
+                scanf("%lf", &a);
+                result = sin(a * M_PI / 180);
+                printf("Result = %.2lf\n", result);
+                break;
+
+            case 8:
+                printf("Enter angle in degrees: ");
+                scanf("%lf", &a);
+                result = cos(a * M_PI / 180);
+                printf("Result = %.2lf\n", result);
+                break;
+
+            case 9:
+                printf("Enter number: ");
+                scanf("%lf", &a);
+                result = log10(a);
+                printf("Result = %.2lf\n", result);
+                break;
+
+            case 10:
+                printf("Exiting...\n");
+                return 0;
+
+            default:
+                printf("Invalid choice!\n");
+        }
+    }
+}
